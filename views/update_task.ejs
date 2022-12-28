@@ -1,0 +1,22 @@
+<form method="POST" id="update_task">
+    <div class="mb-3">
+        <input type="hidden" name="id" value="<%= task._id %>">
+        <label for="newTask" class="form-label">Edit Task</label>
+        <input
+            class="form-control"
+            type="text"
+            for="newTask"
+            name="task"
+            value="<%- task.task %>"
+        />
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="fin" value="1" <%=
+        task.fin != ""?'checked':"" %> />
+        <label class="form-check-label" for="taskStatus"> Done </label>
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary mb-3">Edit</button>
+    </div>
+</form>
