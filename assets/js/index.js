@@ -1,5 +1,3 @@
-const PORT=process.env.PORT
-
 $(document).ready(function () {
     $("#update_task").submit(function (event) {
         event.preventDefault();
@@ -21,7 +19,7 @@ $(document).ready(function () {
         // console.log(data);
 
         var req = {
-            url: `http://localhost:${PORT}/api/task/${data.id}`,
+            url: `http://${window.location.host}/api/task/${data.id}`,
             method: "PUT",
             data: data,
         };
@@ -36,7 +34,7 @@ $(document).ready(function () {
             var id = $(this).attr("task-id");
             console.log(id);
             var request = {
-                url: `http://localhost:${PORT}/api/task/${id}`,
+                url: `http://${window.location.host}/api/task/${id}`,
                 method: "DELETE",
             };
             $.ajax(request).done(function () {
